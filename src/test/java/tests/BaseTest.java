@@ -3,6 +3,8 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import pages.JavaScriptDelaysPage;
+import pages.FormsFieldPage;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
@@ -10,6 +12,9 @@ import static pages.BasePage.BASE_URL;
 
 
 public class BaseTest {
+    JavaScriptDelaysPage javaScriptDelaysPage;
+    FormsFieldPage formsFieldPage;
+
     @BeforeMethod
     public void setup() {
         Configuration.browser = "chrome";
@@ -17,6 +22,9 @@ public class BaseTest {
         Configuration.timeout = 10000;
         Configuration.baseUrl = BASE_URL;
         Configuration.holdBrowserOpen = true;
+
+        javaScriptDelaysPage = new JavaScriptDelaysPage();
+        formsFieldPage = new FormsFieldPage();
     }
 
     @AfterMethod
