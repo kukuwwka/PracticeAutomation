@@ -9,14 +9,14 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static pages.BasePage.BASE_URL;
 
-public class JavaScriptDelaysPage {
+public class JavaScriptDelaysPage extends  BasePage {
     String javaScriptDelaysLink = PropertyReader.getProperty("javascript-delays.url");
 
     final SelenideElement startButton = $x("//button[@id='start']");
     final SelenideElement textLiftoff = $("[id='delay']");
 
     public JavaScriptDelaysPage openJavaScriptDelaysPage() {
-        open(BASE_URL + javaScriptDelaysLink);
+        open("/" + javaScriptDelaysLink);
         return this;
     }
 
@@ -31,4 +31,3 @@ public class JavaScriptDelaysPage {
         return this;
     }
 }
-

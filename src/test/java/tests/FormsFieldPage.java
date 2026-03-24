@@ -11,4 +11,3 @@ public class FormsFieldPage extends BaseTest {
                 .fillFormsFieldPage();
     }
 }
-

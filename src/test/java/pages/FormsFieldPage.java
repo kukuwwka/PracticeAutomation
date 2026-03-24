@@ -6,10 +6,8 @@ import utils.PropertyReader;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
-import static java.awt.SystemColor.text;
-import static pages.BasePage.BASE_URL;
 
-public class FormsFieldPage {
+public class FormsFieldPage extends BasePage {
     String formsFieldsLink = PropertyReader.getProperty("form-fields.url");
 
     final SelenideElement nameField = $x("//*[@id='name-input']");
@@ -23,7 +21,7 @@ public class FormsFieldPage {
     final SelenideElement submitBtn = $x("//button[@class='custom_btn btn_hover'][@id='submit-btn']");
 
     public FormsFieldPage openFormsFieldPage() {
-        open(BASE_URL + formsFieldsLink);
+        open("/" + formsFieldsLink);
         return this;
     }
 
@@ -63,5 +61,4 @@ public class FormsFieldPage {
 
         return this;
     }
-
 }
